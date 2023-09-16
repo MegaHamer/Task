@@ -4,7 +4,21 @@ fun main() {
 }
 
 fun twoTask(){
+    print("Введите строку символов: ")
+    var text = readln()
+    var count = 0
+    for (i in 'A' .. 'Z'){
+        for (k in 0 .. text.length - 1){
+            if (i.uppercase() == text[k].uppercase()){
+                count++
+            }
+        }
+        if (count > 0){
+            println("$i - $count")
+            count = 0
+        }
 
+    }
 }
 
 fun countChar(){
