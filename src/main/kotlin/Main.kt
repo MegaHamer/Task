@@ -1,7 +1,37 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    //countChar()
+    twoTask()
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun twoTask(){
+
+}
+
+fun countChar(){
+    print("Введите строку символов:")
+    var text = readln()
+    var count =1
+    var itogStr =""
+    var currentChar = text[0]
+
+    for (i in text.substring(1) ) {
+        if (currentChar == i){
+            count++
+        }else{
+            if (count>1){
+                itogStr+="$currentChar$count"
+            }else{
+                itogStr+="$currentChar"
+            }
+            currentChar=i
+            count=1
+        }
+    }
+    if (count>1){
+        itogStr+="$currentChar$count"
+    }else{
+        itogStr+="$currentChar"
+    }
+
+    println("Результат - $itogStr")
 }
