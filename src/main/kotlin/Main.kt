@@ -1,7 +1,43 @@
 fun main() {
-    //countChar()
-    //twoTask()
-    threeTask()
+    //countChar() //подсчитывает количество подряд идущих одинаковых символов во введенной строке
+    //twoTask() //подсчитывает количество различных символов во введенной строке
+    //threeTask() //преобразует введенное пользователем натуральное число из 10-ичной системы в двоичную
+    //fourTask() //пользователь, введя два числа и символ операции, узнает результат
+    fiveTask() //пользователь, введя целое число n и основание степени x узнает, существует ли целочисленный показатель степени y для которого выполняется равенство
+}
+
+fun fiveTask(){
+
+}
+
+fun fourTask(){
+    print("Введите 2 числа и симовл опреации(+, -, /, *): ")
+    val text = readln()
+    var num1 = ""
+    var num2 = ""
+    var boo = true
+    var tt= 0
+    var op=""
+    for (char in text.replace(" ", "")) {
+        if (char.isDigit()) {
+            if (boo) {
+                num1 += char
+            } else {
+                num2 += char
+            }
+        } else if (char in setOf('+', '-', '*', '/')) {
+            op += char
+            boo = false
+        }
+    }
+    var res=0
+    when (op){
+        "+"->res= num1.toInt() +num2.toInt()
+        "-"->res= num1.toInt() -num2.toInt()
+        "/"->res= num1.toInt() /num2.toInt()
+        "*"->res= num1.toInt() *num2.toInt()
+    }
+    println("Результат: $res")
 }
 
 fun threeTask(){
@@ -13,7 +49,7 @@ fun threeTask(){
 
 fun twoTask(){
     print("Введите строку символов: ")
-    var text = readln()
+    val text = readln()
     var count = 0
     for (i in 'A' .. 'Z'){
         for (k in 0 .. text.length - 1){
@@ -31,7 +67,7 @@ fun twoTask(){
 
 fun countChar(){
     print("Введите строку символов:")
-    var text = readln()
+    val text = readln()
     var count =1
     var itogStr =""
     var currentChar = text[0]
