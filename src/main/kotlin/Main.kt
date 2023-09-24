@@ -1,6 +1,14 @@
 fun main() {
     //countChar()
-    twoTask()
+    //twoTask()
+    threeTask()
+}
+
+fun threeTask(){
+    print("Введите число в 10 с.с.: ")
+    val ten = readln().toInt()
+    val two = ten.toString(2)
+    println("Число $ten в двоичной с.с. - $two")
 }
 
 fun twoTask(){
